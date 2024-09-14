@@ -249,7 +249,7 @@ body {
 #salvoMensagem {
     display: none; 
     position: fixed;
-    top: 50%; 
+    top: 40%; 
     left: 50%; 
     background-color: green; 
     color: white; 

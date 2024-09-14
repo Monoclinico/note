@@ -52,18 +52,15 @@
     }
  };
 
-
-
-
  window.onload = function() {
 
    tinymce.init({
      selector: '#editor',
      plugins: 'link image code',
      menubar: false,
-     toolbar: 'insertSalvar | insertAtualizar | insertImprimir | insertCheckmark | insertCheckmarkX | fontsizeselect | forecolor',
+     toolbar: 'insertSalvar | insertAtualizar | insertCopiar | insertColar | insertCheckmark | insertCheckmarkX | fontsizeselect | forecolor | insertImprimir',
      height: '100vh',
-     contextmenu: 'cut copy paste',
+     contextmenu: 'copy',
      setup: function (editor) {
 
       editor.ui.registry.addButton('insertSalvar', {
@@ -94,12 +91,24 @@
         editor.insertContent('<span style="color:red; font-size: 1.2em;">X</span>');
       }});
       
+      editor.ui.registry.addButton('insertCopiar', {
+        text: 'Copiar',
+        onAction: function () {
+          copySelectedText();
+      }});
+
+      editor.ui.registry.addButton('insertColar', {
+        text: 'Colar',
+        onAction: function () {
+          pasteFromClipboard(); 
+        }
+      });
 
       editor.on('init', function () {
         recuperarConteudo();
         editor.getDoc().addEventListener('contextmenu', (e) => {
           e.preventDefault();
-          // Exibe menu de contexto customizado se necessário
+          
         });
       });
        
@@ -109,6 +118,34 @@
   
 
  };
+
+ function copySelectedText() {
+  const editor = tinymce.get('editor'); // Substitua 'editor' pelo seletor do seu editor
+  const selectedText = editor.selection.getContent({ format: 'text' }); // Obtém o texto selecionado
+  
+  if (selectedText) {
+    navigator.clipboard.writeText(selectedText).then(() => {
+      console.log('Texto copiado para a área de transferência!');
+    }).catch(err => {
+      console.error('Erro ao copiar para a área de transferência:', err);
+    });
+  } else {
+    console.log('Nenhum texto selecionado.');
+  }
+}
+
+async function pasteFromClipboard() {
+  const editor = tinymce.get('editor'); // Substitua 'editor' pelo seletor do seu editor
+  
+  try {
+    const text = await navigator.clipboard.readText(); // Lê o texto da área de transferência
+    editor.insertContent(text); // Insere o texto na posição atual do cursor
+    console.log('Texto colado.');
+  } catch (err) {
+    console.error('Erro ao colar da área de transferência:', err);
+  }
+}
+
 
  function imprimirConteudo() {
    const contentToPrint = tinymce.get("editor").getContent();
