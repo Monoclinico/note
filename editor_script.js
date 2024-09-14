@@ -125,12 +125,12 @@
   
   if (selectedText) {
     navigator.clipboard.writeText(selectedText).then(() => {
-      console.log('Texto copiado para a área de transferência!');
+      //console.log('Texto copiado para a área de transferência!');
     }).catch(err => {
-      console.error('Erro ao copiar para a área de transferência:', err);
+      //console.error('Erro ao copiar para a área de transferência:', err);
     });
   } else {
-    console.log('Nenhum texto selecionado.');
+    //console.log('Nenhum texto selecionado.');
   }
 }
 
@@ -140,9 +140,9 @@ async function pasteFromClipboard() {
   try {
     const text = await navigator.clipboard.readText(); // Lê o texto da área de transferência
     editor.insertContent(text); // Insere o texto na posição atual do cursor
-    console.log('Texto colado.');
+    //console.log('Texto colado.');
   } catch (err) {
-    console.error('Erro ao colar da área de transferência:', err);
+    //console.error('Erro ao colar da área de transferência:', err);
   }
 }
 
