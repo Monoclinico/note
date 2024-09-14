@@ -63,6 +63,7 @@
      menubar: false,
      toolbar: 'insertSalvar | insertAtualizar | insertImprimir | insertCheckmark | insertCheckmarkX | fontsizeselect | forecolor',
      height: '100vh',
+     contextmenu: 'cut copy paste',
      setup: function (editor) {
 
       editor.ui.registry.addButton('insertSalvar', {
@@ -96,6 +97,10 @@
 
       editor.on('init', function () {
         recuperarConteudo();
+        editor.getDoc().addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          // Exibe menu de contexto customizado se necessário
+        });
       });
        
      },
