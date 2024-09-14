@@ -7,7 +7,7 @@ function login() {
 
     let input_senha = document.getElementById("senha");
 
-    let s = localStorage.getItem("senha");
+    let s = localStorage.getItem("senha_nota_street");
 
     if(s == SENHA){
         input_senha.value =  s;
@@ -18,7 +18,7 @@ function login() {
         mascara_login.style = "display: none;";
         mascara_conteudo.style = "display: block;";
 
-        localStorage.setItem("senha", SENHA);
+        localStorage.setItem("senha_nota_street", SENHA);
         insirirConteudo();
 
     }else {
@@ -66,7 +66,7 @@ function startSite(estado){
     if (estado){
         let botao_logar = document.getElementById("btn_logar");
         botao_logar.addEventListener("click",login);
-        let s = localStorage.getItem("senha");
+        let s = localStorage.getItem("senha_nota_street");
 
         if(s == SENHA){
             login();
