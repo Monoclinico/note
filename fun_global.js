@@ -34,7 +34,7 @@ function login() {
 
 
 function inserirBotoesMenu(){
-    let extremidade = "/"; // colocar / se for local host e /nps/ se for github
+    let extremidade = "/note/"; // colocar / se for local host e /nps/ se for github
     let caminho_listaCorte = "index.html";
 
     let urlBase = `http://${window.location.hostname}:${window.location.port}${extremidade}`;
