@@ -83,7 +83,8 @@
         text: '✔',
         onAction: function () {
         editor.insertContent('<span style="color:#2dc26b; font-size: 1.3em;">☑</span>');
-      }});
+        },
+    });
 
       editor.ui.registry.addButton('insertCheckmarkX', {
         text: 'X',
@@ -178,11 +179,19 @@ function exibirMensagemSalvo() {
  }
 
  function mudarEstilo() {
+  
   let barraInferior = document.getElementsByClassName("tox-tbtn__select-label");
+  let barraSuperior = document.getElementsByClassName("tox-editor-header");
+
+
   if (barraInferior.length > 0 ){
     for (let x = 0;x < barraInferior.length; x++){
       barraInferior[x].style = "font-size: 0.8em;";
     }
+  }
+
+  if (barraSuperior.length > 0 ){
+    barraSuperior[0].style = "position: fixed; width: 100%; top: 0; left: 0;";
     clearInterval(loopAtualizar);
   }
 }

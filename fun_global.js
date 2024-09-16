@@ -51,7 +51,7 @@ function inserirBotoesMenu(){
         localStorage.clear();
         startSite(true);
         location.reload();
-        console.clear();
+        //console.clear();
     });
 
 }
@@ -71,7 +71,7 @@ function startSite(estado){
         if(s == SENHA){
             login();
         }
-        let x = setTimeout(function () { console.clear(); }, 3000);
+        let x = setTimeout(function () { /*console.clear();*/}, 3000);
     }else{
        fora.style = "display: block;";
        mascara_conteudo.style = "display: none;";
