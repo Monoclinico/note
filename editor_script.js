@@ -191,7 +191,7 @@ function exibirMensagemSalvo() {
   }
 
   if (barraSuperior.length > 0 ){
-    barraSuperior[0].style = "position: fixed !important; width: 100% !important; height: 60px !important; top: 0 !important; left: 0 !important; z-index: 1000 !important;  ";
+    barraSuperior[0].style = "position: sticky !important; width: 100% !important; height: 60px !important; top: 0 !important; left: 0 !important; z-index: 1000 !important;  ";
     clearInterval(loopAtualizar);
   }
 }
