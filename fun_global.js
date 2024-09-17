@@ -59,10 +59,13 @@ function inserirBotoesMenu(){
 }
 
 
-function inserirIframe() {
 
-
+function abrirLink() {
+    var url = "https://docs.google.com/document/d/1UCwCfUXbVIpZCP0CzSN4ktsgxI5b__60kb_5w9ANJb0/edit?usp=sharing";
+    window.location.href = url;
 }
+
+
 
 function startSite(estado){
     let mascara_conteudo = document.getElementById("mascara_conteudo");
@@ -87,3 +90,10 @@ function startSite(estado){
     }
 
 }
+
+function insirirConteudo(){
+    //inserirBotoesMenu();
+    abrirLink();
+}
+
+startSite(true);
