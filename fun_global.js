@@ -93,7 +93,7 @@ function startSite(estado){
 
 function insirirConteudo(){
     //inserirBotoesMenu();
-    abrirLink();
+    //abrirLink();
 }
 
 startSite(true);
