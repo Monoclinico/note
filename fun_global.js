@@ -2,6 +2,8 @@ const SENHA = "street";
 
 
 function login() {
+
+
     let mascara_login = document.getElementById("mascara_login");
     let mascara_conteudo = document.getElementById("mascara_conteudo");
 
@@ -53,6 +55,12 @@ function inserirBotoesMenu(){
         location.reload();
         //console.clear();
     });
+
+}
+
+
+function inserirIframe() {
+
 
 }
 

@@ -1,5 +1,6 @@
 function insirirConteudo(){
-    inserirBotoesMenu();
+    //inserirBotoesMenu();
+    inserirIframe();
 }
 
  startSite(true);
