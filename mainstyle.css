@@ -262,7 +262,9 @@ body {
 
 .cl_a_abrirPlanilha {
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
+    width: auto;
+    height: auto;
     position: relative;
     padding: 15px 30px;
     font-size: 16px;
@@ -273,7 +275,5 @@ body {
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    transform: translate(-50%,-50%);
 
 }
