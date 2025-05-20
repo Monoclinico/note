@@ -1,4 +1,0 @@
-colocar a opção de imprimir
-colocar tele de login só com senha simples
-deve ter a opção de manter conectado
-os botões de salvar e atualizar devem ser flutuantes
